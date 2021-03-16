@@ -6,4 +6,17 @@
     border-style: solid;
     border-color: black;
 }
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 618px;
+    height: 618px;
+  }
+  
+  .mole {
+    background-image: url('mole.jpg');
+    background-size: cover;
+  }
 
