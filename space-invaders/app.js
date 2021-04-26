@@ -52,3 +52,16 @@ function moveShooter(e) {
   }
   squares[currentShooterIndex].classList.add('shooter')
 }
+document.addEventListener('keydown', moveShooter)
+
+function moveInvaders() {
+  const leftEdge = alienInvaders[0] % width === 0
+  const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width -1
+  remove()
+  if (rightEdge && goingRight) {
+    for (let i = 0; i < alienInvaders.length; i++) {
+      alienInvaders[i] += width +1
+      direction = -1
+      goingRight = false
+    }
+  }
