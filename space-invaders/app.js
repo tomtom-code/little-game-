@@ -120,4 +120,12 @@ function shoot(e) {
       }
   
     }
+    switch(e.key) {
+        case 'ArrowUp':
+          laserId = setInterval(moveLaser, 100)
+      }
+    }
+    
+    document.addEventListener('keydown', shoot)
+    
 
