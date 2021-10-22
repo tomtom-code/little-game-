@@ -66,5 +66,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+//move the car right on a time loop
+    function moveCarRight(carRight){
+        switch(true){
+            case carRight.classList.contains('c1'):
+                carRight.classList.remove('c1')
+                carRight.classList.add('c3')
+            break
+
+            case carRight.classList.contains('c2'):
+                carRight.classList.remove('c2')
+                carRight.classList.add('c1')
+            break
+            case carRight.classList.contains('c3'):
+                carRight.classList.remove('c3')
+                carRight.classList.add('c')
+            break
+
+    }
+    }
+
+    //move the logs
+
+    function autoMoveLogs() {
+        logsLeft.forEach(logLeft => moveLogLeft(logLeft))
+        logsRight.forEach(logRight => moveLogRight(logRight))
+    }
+
+
 
 })
