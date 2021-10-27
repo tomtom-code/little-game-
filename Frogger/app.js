@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logsRight = document.querySelector('.logs-right')
     const width = 9
     let currentIndex = 76
+    let currentTime = 20
     let timerId
 
     // render frog on starting block
@@ -162,6 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId)
             document.removeEventListener('keyup',MoveFrog)
 
+        }
+    }
+
+    //rules to lose Frogger
+    function lose() {
+        if((currentTime ===0) || (squares[currentIndex].classList.contains('c1'))
+        || (squares[currentIndex].classList.contains('l5'))
+        || (squares[currentIndex].classList.contains('l4'))) {
+            result.innerHTML = 'YOU LOSE'
+            squares[currentIndex].classList.remove('frog')
+            clearInterval(timerId)
+            document.removeEventListener('keyup', moveFrog)
         }
     }
 
