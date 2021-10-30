@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeLeft = document.querySelector('#time-left')
     const result = document.querySelector('#result')
     const startBtn = document.querySelector('#button')
-    const carsLeft = document.querySelector('.car-left')
-    const carsRight = document.querySelector('.car-right')
-    const logsLeft = document.querySelector('.logs-left')
-    const logsRight = document.querySelector('.logs-right')
+    const carsLeft = document.querySelectorAll('.car-left')
+    const carsRight = document.querySelectorAll('.car-right')
+    const logsLeft = document.querySelectorAll('.logs-left')
+    const logsRight = document.querySelectorAll('.logs-right')
     const width = 9
     let currentIndex = 76
     let currentTime = 20
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     squares[currentIndex].classList.add('frog')
 
     // write a function that will move the Frog
-    function movceFrog(e){
+    function moveFrog(e){
         squares[currentIndex].classList.remove('frog')
         switch(e.keyCode){
             case 37:
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //move the frog when its on the log move right
-    function moveWithLogReft(){
+    function moveWithLogRight(){
         if (currentIndex >= 18 && currentIndex < 26){
             squares[currentIndex].classList.remove('frog')
             currentIndex -= 1
@@ -210,6 +210,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //to start and pause the game
+    startBtn.addEventListener('click', () => {
+        if(timerId){
+            clearInterval(timerId)
+        } else {
+            timerId = setInterval(movePieces, 1000)
+            document.addEventListener('keyup', moveFrog)
+        }
+    })
 
 
 
