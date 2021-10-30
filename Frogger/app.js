@@ -197,5 +197,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //all the functions that move pieces
+    function movePieces(){
+        currentTime--
+        timeLeft.textContent = currentTime
+        autoMoveCars()
+        autoMoveLogs()
+        moveWithLogLeft()
+        moveWithLogRight()
+        lose()
+        
+    }
+
+    //to start and pause the game
+
+
 
 })
