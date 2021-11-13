@@ -6,8 +6,13 @@ div {
 }
 
 .grid{
-    background-color : blue;
     height: 400 px;
     width: 200px;
+    display: flex;
+    flex-wrap: wrap;
 
+}
+
+.block {
+    background-color: blue;
 }
