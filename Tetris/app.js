@@ -47,11 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
  // Tandomly select Tetromino
 
- let rendom = Math.floor(Math.random()*theTetrominoes.length)
+ let random = Math.floor(Math.random()*theTetrominoes.length)
  let currentRotation = 0
  let current = theTetrominoes[random][currentRotation]
 
- // move the Tetromino down
+ // draw the shape
+ function draw(){
+     current.forEach( index =>(
+        squares[currentPosition + index.classList.add('block')]
+     ))
+ }
+
+ // undraw the shape
+ function undraw(){
+     current.forEach( index =>(
+         squares[currentPosition + index.classList.remove(block)]
+     ))
+ }
 
  
 
