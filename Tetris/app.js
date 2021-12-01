@@ -84,10 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current.some(index => squares[currentPositioon + index]. classList.contains('block2'))){
         currentPosition -= 1
     }
-
+    draw()
+ }
+ function moveLeft() {
+     undraw()
+     const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
+     if(!isAtLeftEdge) currentPosition -=1
+     if(current.some( index => squares[currentPosition + index].classList.contains('block2'))) {
+         currentPosition += 1
+     }
+     draw()
  }
 
- 
+ // rotate Tetromino
+ function roatate(){
+     undraw()
+     currentRotation ++
+     if(currentRotation === current.length) {
+         currentRotation = 0
+     }
+     current = theTetrominoes[random][currentRotation]
+     draw()
+ }
 
 
 }
