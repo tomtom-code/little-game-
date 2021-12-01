@@ -65,6 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
      ))
  }
 
+ //move down shape
+
+ function moveDown(){
+     undraw()
+    currentPosition = currentPosition += width
+    draw()
+    freeze()
+ }
+
+
+ // move left and prevent collisions with shapes moving left
+
+ function moveRight() {
+    undraw()
+    const isAtRightEdge = current.some(index => (currentPosition + index) % width === width -1)
+    if (!isAtRightEdge) currentPosition += 1
+    if (current.some(index => squares[currentPositioon + index]. classList.contains('block2'))){
+        currentPosition -= 1
+    }
+
+ }
+
  
 
 
